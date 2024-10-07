@@ -45,7 +45,24 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
         <section class="text-center">
             <h1 class="text-secondary pt-5">STRONG PASSWORD GENERATOR</h1>
             <h2 class="text-white pb-3">Genera una password sicura</h2>
+            <div class="box">
+                <div class="card">
+                    <div class="card-body bg-info-subtle">
+                        Nessun paramentro valido inserito.
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <form action="index.php" method="GET">
+                            <label for="password">Lunghezza password: </label>
+                            <input type="text" id="password" name="password">
+                            <button type="submit" class="btn btn-primary">Invia</button>
+                            <button class="btn btn-secondary">Annulla</button>
+                        </form>
 
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 </body>
