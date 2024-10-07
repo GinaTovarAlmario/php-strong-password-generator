@@ -24,16 +24,7 @@ simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
 
 <?php
-// funzione per generare password
-    function generatePassword($num){
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%&/?_-+';
-        $charactersLength = strlen($characters);
-        $randomPassword = '';
-        for ($i = 0; $i < $num; $i++) {
-            $randomPassword .= $characters[random_int(0, $charactersLength - 1)];
-        }
-        return $randomPassword;
-    }
+require_once __DIR__ . "/functions/functions.php";
     // creo variabile per gestire messaggio
     $message = '';
     $newPassword= '';
