@@ -24,7 +24,27 @@ simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
 
 <?php
+// funzione per generare password
+    function generatePassword($num){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%&/?_-+';
+        $charactersLength = strlen($characters);
+        $randomPassword = '';
+        for ($i = 0; $i < $num; $i++) {
+            $randomPassword .= $characters[random_int(0, $charactersLength - 1)];
+        }
+        return $randomPassword;
+    }
+    // creo variabile per gestire messaggio
+    $message = '';
+    $newPassword= '';
 
+    if(isset($_GET["password"]) && !empty($_GET["password"]) && is_numeric($_GET["password"])){
+        $maxNum = $_GET["password"];
+        $newPassword = generatePassword($maxNum);
+        $message = "Password creata con successo! La tua nuova password è : {$newPassword}";
+    } else {
+        $message = "Nessun paramentro valido inserito";
+    }
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +68,7 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
             <div class="box">
                 <div class="card">
                     <div class="card-body bg-info-subtle">
-                        Nessun paramentro valido inserito.
+                        <?= $message ?>
                     </div>
                 </div>
                 <div class="card mt-3">
