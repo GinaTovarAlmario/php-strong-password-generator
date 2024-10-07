@@ -1,11 +1,11 @@
 <?php
 // funzione per generare password
     function generatePassword($num){
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%*/?_-+';
-        $charactersLength = strlen($characters);
+        $charactersAllowed = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;=?@[\]^_{|}~";
+        $charactersAllowedLength = strlen($charactersAllowed);
         $randomPassword = '';
         for ($i = 0; $i < $num; $i++) {
-            $randomPassword .= $characters[random_int(0, $charactersLength - 1)];
+            $randomPassword .= $charactersAllowed[random_int(0, $charactersAllowedLength - 1)];
         }
         return $randomPassword;
     }
